@@ -12,7 +12,7 @@
 	<body>
 	
 	<div id="app">
-		<span v-bind:class="{special:true, important:isImportant}">
+		<span v-bind:class="{special:isSpecial, important:isImportant}">
 			look at me!
 		</span>
 	</div>
@@ -21,7 +21,8 @@
 	var app = new Vue({
 		el: '#app',
 		data:{
-			isImportant:true
+			isImportant:true,
+            isSpecial: true
 		}
 	});
 	</script>
@@ -33,7 +34,7 @@
 		
 		v-bind:html_attribute_key="{value:boolean_expression}"
 		
-		
+
 		v-bind can be applied conditionally, similar to an IF statement.
 		The value is only applied when the boolean evaluates to true
 		The boolean expression can come either in-line or as a object property.

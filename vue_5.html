@@ -12,7 +12,7 @@
 	<body>
 	
 	<div id="app">
-		<div v-bind:class="{box:true, hidden:boxHidden}">{{message}}</div>
+		<div v-on:mouseenter="hovershowhide();" v-bind:class="{box:true, hidden:boxHidden}">{{message}}</div>
 		<button v-on:click="showhide();">Click</button>
 	</div>
 	
@@ -33,7 +33,13 @@
 				}else{
 					this.boxHidden=true;	
 				}
-			}
+			},
+            hovershowhide : function(){
+                console.log(this.boxHidden);
+				
+					this.boxHidden=true;	
+				
+            }
 		}
 		
 	});

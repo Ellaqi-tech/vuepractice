@@ -6,6 +6,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<style>
 			.container{background:#cecece;}
+            .yellowborder{border:yellow 3px solid;}
+            .imgsize{display: block; width: 600px; height: auto;}
 		</style>
 	</head>
 	<body>
@@ -38,9 +40,10 @@
 			1. Create an image and set the following attributes with Vue {src, alt, title}
 			2. Augment the span below to include another class called "highlight", which has a yellow border.
 		-->
-		<span v-bind:class="loadClass">
+		<span v-bind:class="[loadClass, highlight]">
 			look at me!
 		</span>
+        <img v-bind:src="imgsrc" v-bind:alt="imgalt" v-bind:title="imgtitle" v-bind:class="imgsize">
 	</div>
 	
 	<script>
@@ -48,7 +51,12 @@
 		//Bind Vue object to HTML element through query selector
 		el: '#app',
 		data:{
-			loadClass : 'container',
+			loadClass : 'container', 
+            highlight: 'yellowborder',
+            imgsize: 'imgsize',
+            imgsrc: 'img/riz-mooney-IbngTBpNuMA-unsplash.png',
+            imgalt: 'a cool HD picture says DO WHAT YOU LOVE',
+            imgtitle: 'DO WHAT YOU LOVE',
 			//newStyle : 'font-size:30px;',
 			//newAlt : 'dynamically set alt!'
 			

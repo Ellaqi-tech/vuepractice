@@ -6,7 +6,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<style>
 			ul {list-style-type:none;}
-			ul li{marign-bottom:20px;}
+			ul li {marign-bottom:20px;}
 		</style>
 	</head>
 	<body>
@@ -15,7 +15,7 @@
 		<ul>
 			<li v-for="part in scene">
 				<span>{{part.character}}</span>
-				<p>{{part.dialogue}}</p>
+				<p v-for="sentence in part.dialogue.split('\n')">{{sentence}}</p>
 			</li>
 		</ul>
 	</div>
